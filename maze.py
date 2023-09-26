@@ -70,7 +70,16 @@ class Maze():
                     elif contents[i][j] == "B":
                         self.goal = (i, j)
                         row.append(False)
-                    
+                    elif contents[i][j] == " ":
+                        row.append(False)
+                    else:
+                        row.append(True)
+                except IndexError:
+                    row.append(False)
+            self.walls.append(row)
+
+        self.solution = None
+        
 
 
 
